@@ -7,9 +7,22 @@ Class {
 	#category : #Dice
 }
 
+{ #category : #initialization }
+Die class >> withFaces: anInteger [ 
+	| d |
+	d := self new.
+	d faces: anInteger.
+	^ d
+]
+
 { #category : #accessors }
 Die >> faces [
  ^ faces
+]
+
+{ #category : #setter }
+Die >> faces: anInteger [ 
+	faces := anInteger
 ]
 
 { #category : #initialization }

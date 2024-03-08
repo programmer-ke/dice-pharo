@@ -5,6 +5,16 @@ Class {
 }
 
 { #category : #tests }
+DieTest >> testCreatingWithNumFaces [
+	"comment stating purpose of instance-side message"
+	"scope: class-variables  &  instance-variables"	
+			
+	| die |
+	die := Die withFaces: 20.
+	self assert: die faces equals: 20
+]
+
+{ #category : #tests }
 DieTest >> testInitialization [
 	"comment stating purpose of instance-side message"
 	"scope: class-variables  &  instance-variables"	
