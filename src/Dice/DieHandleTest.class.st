@@ -28,3 +28,30 @@ DieHandleTest >> testCreationWithTheSameDice [
 	handle addDie: (Die withFaces: 6).
 	self assert: handle diceNumber equals: 2.
 ]
+
+{ #category : #tests }
+DieHandleTest >> testMaxValue [
+	"comment stating purpose of instance-side message"
+	"scope: class-variables  &  instance-variables"	
+	
+	| handle |		
+	handle := DieHandle new.
+	handle
+		addDie: (Die withFaces: 6);
+		addDie: (Die withFaces: 10).
+	self assert: handle maxValue equals: 16.
+]
+
+{ #category : #tests }
+DieHandleTest >> testRoll [
+	"comment stating purpose of instance-side message"
+	"scope: class-variables  &  instance-variables"	
+	
+	| handle |		
+	handle := DieHandle new.
+	handle
+		addDie: (Die withFaces: 6);
+		addDie: (Die withFaces: 10).
+	10 timesRepeat:
+	  [ self assert: (handle roll between: handle diceNumber and: handle maxValue) ]
+]
