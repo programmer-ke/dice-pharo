@@ -55,3 +55,14 @@ DieHandleTest >> testRoll [
 	10 timesRepeat:
 	  [ self assert: (handle roll between: handle diceNumber and: handle maxValue) ]
 ]
+
+{ #category : #tests }
+DieHandleTest >> testSimpleHandle [
+	self assert: 2 D20 diceNumber equals: 2
+]
+
+{ #category : #tests }
+DieHandleTest >> testSummingDSL [
+	
+	self assert: (3 D4 + 2 D6) diceNumber equals: 5
+]

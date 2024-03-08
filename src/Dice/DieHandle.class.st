@@ -7,9 +7,24 @@ Class {
 	#category : #Dice
 }
 
+{ #category : #initialization }
+DieHandle >> + aDieHandle [
+
+	| handle |
+	handle := self class new.
+	self dice do: [ :each | handle addDie: each ].
+	aDieHandle dice do: [ :each | handle addDie: each ].
+	^ handle.
+]
+
 { #category : #'as yet unclassified' }
 DieHandle >> addDie: aDie [ 
 	dice add: aDie
+]
+
+{ #category : #accessing }
+DieHandle >> dice [
+	^ dice
 ]
 
 { #category : #'as yet unclassified' }
